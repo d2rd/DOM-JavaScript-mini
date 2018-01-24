@@ -1,5 +1,5 @@
 .Tabs__item {
-  display: none;
+  display: none; /* set off to off */
 }
 
 .Tabs__item-selected {
