@@ -15,9 +15,9 @@ class TabItem {
 
 class TabLink {
   constructor(element, parent) {
-    this.element;// attach dom element to object
-    this.tabs;// attach parent to object
-    this.tabItem;// assign this to the associated tab using the parent's "getTab" method by passing it the correct data
+    this.element;  // attach dom element to object
+    this.tabs = parent;  // attach parent to object
+    this.tabItem = this.tabs.getTab();  // assign this to the associated tab using the parent's "getTab" method by passing it the correct data
     // reassign this.tabItem to be a new instance of TabItem, passing it this.tabItem
     this.element.addEventListener('click', () => {
       this.tabs.updateActive(this);
@@ -64,4 +64,5 @@ class Tabs {
 
 let tabs = document.querySelectorAll(".Tabs");
 console.log("tabs after querySelectorAll", tabs);  // Debug tip: make a note and look at it in the DOM
+console.log(tabs)  //
 tabs = Array.from(tabs).map(tabs => new Tabs(tabs));
